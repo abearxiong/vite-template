@@ -1,9 +1,9 @@
-console.log('tailwind.config.js')
+console.log('tailwind.config.js');
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
+  darkMode: ['class'],
   content: ['./src/**/*.{ts,tsx}'],
-  plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography'), require('tailwindcss-animate')],
   theme: {
     extend: {},
     screen: {
@@ -23,9 +23,8 @@ export default {
       // => @media (min-width: 1536px) { ... }
       '3xl': '1920px',
       // => @media (min-width: 1920) { ... }
-      '4xl': '2560px'
+      '4xl': '2560px',
       // => @media (min-width: 2560) { ... }
-    }
+    },
   },
-  plugins: [require("tailwindcss-animate")]
-}
+};

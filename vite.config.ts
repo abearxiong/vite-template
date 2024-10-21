@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [react()],
   css: {
     postcss: {
+      // @ts-ignore
       plugins: [nesting, tailwindcss, autoprefixer],
     },
   },
@@ -31,7 +32,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
       '/api/router': {
-        target: 'ws://localhost:3003',
+        target: 'ws://localhost:3000',
         changeOrigin: true,
         ws: true,
         rewriteWsOrigin: true,

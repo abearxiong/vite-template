@@ -1,11 +1,28 @@
-console.log('tailwind.config.js');
+import path from 'path';
+
+const root = path.resolve(process.cwd());
+const contents = ['./src/**/*.{ts,tsx,html}', './src/**/*.css']
+const content = contents.map((item) => path.join(root, item));
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
-  content: ['./src/**/*.{ts,tsx}'],
-  plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography'), require('tailwindcss-animate')],
+  content: content,
+  plugins: [
+    require('@tailwindcss/aspect-ratio'), //
+    require('@tailwindcss/typography'),
+    require('tailwindcss-animate'),
+    require('@build/tailwind'),
+  ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mon: ['Montserrat', 'sans-serif'], // 定义自定义字体族
+        rob: ['Roboto', 'sans-serif'],
+        int: ['Inter', 'sans-serif'],
+        orb: ['Orbitron', 'sans-serif'],
+        din: ['DIN', 'sans-serif'],
+      },
+    },
     screen: {
       sm: '640px',
       // => @media (min-width: 640px) { ... }

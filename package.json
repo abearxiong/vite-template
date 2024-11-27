@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "deploy": "rsync -avz --delete dist/ light:~/apps/ai/dist",
     "preview": "vite preview",
+    "ev": "envision deploy ./dist -k vite-react -v 0.0.1",
     "pub": "npm run build && npm run deploy"
   },
   "dependencies": {

@@ -3,4 +3,4 @@ type SimpleObject = {
   [key: string | number]: any;
 };
 
-declare let DEV_SERVER: boolean;
+declare let BASE_NAME: string;

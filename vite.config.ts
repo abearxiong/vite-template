@@ -9,10 +9,11 @@ const version = pkgs.version || '0.0.1';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const basename = isDev ? '/' : '/username/app';
+const basename = isDev ? '/' : pkgs?.basename || '/';
 const plugins = []
 const isWeb = false;
 if(isWeb) {
+  // 在bolt.new的页面，没有ssl
   plugins.push(basicSsl())
 }
 // https://vitejs.dev/config/

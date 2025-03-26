@@ -1,4 +1,4 @@
-import { basename } from './modules/basename';
+import { basename } from '../modules/basename';
 
 console.log('basename', basename);
 export const App = () => {

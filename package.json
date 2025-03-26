@@ -6,14 +6,13 @@
   "basename": "/",
   "scripts": {
     "dev": "vite",
-    "dev:web": "cross-env WEB_DEV=true vite --mode web",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "pub": "envision deploy ./dist -k vite-react -v 0.0.1",
-    "ev": "npm run build && npm run deploy"
+    "ev": "npm run build && npm run deploy",
+    "dev:lib": "turbo dev"
   },
-
   "author": "abearxiong <xiongxiao@xiongxiao.me>",
   "license": "MIT",
   "dependencies": {
@@ -28,8 +27,6 @@
     "nanoid": "^5.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.4.0",
-    "react-router-dom": "^7.4.0",
     "react-toastify": "^11.0.5",
     "zustand": "^5.0.3"
   },
@@ -52,5 +49,6 @@
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.28.0",
     "vite": "^6.2.3"
-  }
+  },
+  "packageManager": "pnpm@10.6.5"
 }

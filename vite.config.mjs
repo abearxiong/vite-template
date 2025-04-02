@@ -16,8 +16,10 @@ const plugins = [react(), ];
 
 if (!isJsh) {
   const basicSsl = await import('@vitejs/plugin-basic-ssl');
+  const tailwindcss = await import('@tailwindcss/vite');
   const defaultPlugin = basicSsl.default;
-  plugins.push(tailwindcss(),defaultPlugin());
+  const defaultCssPlugin = tailwindcss.default;
+  plugins.push(defaultCssPlugin(),defaultPlugin());
 }
 
 let target = 'https://kevisual.xiongxiao.me';
@@ -28,6 +30,9 @@ if (isDev) {
 }
 
 let proxy = {
+  '/root/system-lib/': {
+    target: `https://${target}/root/system-lib/`,
+  },
   '/user/login/': {
     target: `https://${target}/user/login/`,
   },

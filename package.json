@@ -7,10 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
     "pub": "envision deploy ./dist -k vite-react -v 0.0.1",
-    "ev": "npm run build && npm run deploy",
     "dev:lib": "turbo dev"
   },
   "author": "abearxiong <xiongxiao@xiongxiao.me>",
@@ -20,24 +18,25 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "lodash-es": "^4.17.21",
-    "lucide-react": "^0.484.0",
+    "lucide-react": "^0.487.0",
     "nanoid": "^5.1.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-toastify": "^11.0.5",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@kevisual/query": "0.0.15",
     "@kevisual/types": "^0.0.6",
-    "@tailwindcss/vite": "^4.0.16",
-    "@types/node": "^22.13.13",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
+    "@tailwindcss/vite": "^4.1.1",
+    "@types/node": "^22.13.17",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "@vitejs/plugin-basic-ssl": "^2.0.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "tailwindcss": "^4.0.16",
+    "tailwindcss": "^4.1.1",
     "typescript": "^5.8.2",
-    "vite": "^6.2.3"
+    "vite": "^6.2.4"
   },
-  "packageManager": "pnpm@10.6.5"
+  "packageManager": "pnpm@10.7.1"
 }

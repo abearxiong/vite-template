@@ -12,12 +12,12 @@ const checkJsh = () => {
   return process.env.SHELL === '/bin/jsh';
 };
 const isJsh = checkJsh();
-const plugins = [react(), tailwindcss()];
+const plugins = [react(), ];
 
 if (!isJsh) {
   const basicSsl = await import('@vitejs/plugin-basic-ssl');
   const defaultPlugin = basicSsl.default;
-  plugins.push(defaultPlugin());
+  plugins.push(tailwindcss(),defaultPlugin());
 }
 
 let target = 'https://kevisual.xiongxiao.me';

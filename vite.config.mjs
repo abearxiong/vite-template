@@ -58,9 +58,15 @@ export default defineConfig({
     DEV_SERVER: JSON.stringify(process.env.NODE_ENV === 'development'),
     VERSION: JSON.stringify(version),
     BASE_NAME: JSON.stringify(basename),
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   },
   build: {
     target: 'modules',
+    // lib: {
+    //   entry: './src/libs.ts',
+    //   formats: ['es'],
+    //   fileName: (format) => `render.js`,
+    // },
   },
   server: {
     port: 7006,

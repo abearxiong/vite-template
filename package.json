@@ -7,10 +7,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:css": "tailwindcss -i ./src/index.css -o ./dist/render.css --minify",
+    "postbuild2": "pnpm build:css",
     "preview": "vite preview",
     "pub": "envision deploy ./dist -k vite-react -v 0.0.1",
     "dev:lib": "turbo dev"
   },
+  "files": [
+    "dist"
+  ],
   "author": "abearxiong <xiongxiao@xiongxiao.me>",
   "license": "MIT",
   "dependencies": {
@@ -24,6 +29,9 @@
     "react-dom": "^19.1.0",
     "react-toastify": "^11.0.5",
     "zustand": "^5.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@kevisual/query": "0.0.15",

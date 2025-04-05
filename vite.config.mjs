@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import tailwindcss from '@tailwindcss/vite';
 import pkgs from './package.json' with { type: 'json' };
 const version = pkgs.version || '0.0.1';
 
@@ -30,6 +29,9 @@ if (isDev) {
 }
 
 let proxy = {
+  '/root/center/': {
+    target: `https://${target}/root/center/`,
+  },
   '/root/system-lib/': {
     target: `https://${target}/root/system-lib/`,
   },
@@ -41,6 +43,7 @@ let proxy = {
     changeOrigin: true,
     ws: true,
     rewriteWsOrigin: true,
+    cookieDomainRewrite: 'localhost',
   },
 };
 /**
@@ -56,7 +59,7 @@ export default defineConfig({
   base: basename,
   define: {
     DEV_SERVER: JSON.stringify(process.env.NODE_ENV === 'development'),
-    VERSION: JSON.stringify(version),
+    APP_VERSION: JSON.stringify(version),
     BASE_NAME: JSON.stringify(basename),
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   },

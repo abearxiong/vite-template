@@ -1,4 +1,10 @@
 import { createRoot } from 'react-dom/client';
-import { App } from './pages/App.tsx';
+import { App, AppRoute } from './pages/App.tsx';
+import { CustomThemeProvider } from '@kevisual/components/theme/index.tsx';
 
-createRoot(document.getElementById('root')!).render(<App />);
+console.log('cu',)
+createRoot(document.getElementById('root')!).render(
+  <CustomThemeProvider>
+    <AppRoute />
+  </CustomThemeProvider>,
+);

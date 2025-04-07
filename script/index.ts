@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { program, Command } from 'commander';
+import { program, Command } from './program';
 
 export const root = process.cwd();
 

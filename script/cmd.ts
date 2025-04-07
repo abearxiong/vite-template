@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { program, Command } from 'commander';
 
 export const root = process.cwd();
 
@@ -9,3 +10,6 @@ export const clearWorkspace = () => {
     fs.rmSync(path.join(root, file), { recursive: true, force: true });
   }
 };
+program.addCommand(new Command('clear').action(clearWorkspace));
+
+program.parse(process.argv);

@@ -11,7 +11,8 @@
     "postbuild2": "pnpm build:css",
     "preview": "vite preview",
     "pub": "envision deploy ./dist -k vite-react -v 0.0.1",
-    "dev:lib": "turbo dev"
+    "dev:lib": "turbo dev",
+    "cmd": "tsx ./script/cmd.ts "
   },
   "files": [
     "dist"
@@ -34,7 +35,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@kevisual/query": "0.0.15",
+    "@kevisual/query": "0.0.17",
     "@kevisual/types": "^0.0.6",
     "@tailwindcss/vite": "^4.1.3",
     "@types/node": "^22.14.0",
@@ -42,6 +43,8 @@
     "@types/react-dom": "^19.1.1",
     "@vitejs/plugin-basic-ssl": "^2.0.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "commander": "^13.1.0",
+    "inquire": "^0.4.8",
     "tailwindcss": "^4.1.3",
     "typescript": "^5.8.3",
     "vite": "^6.2.5"

@@ -1,3 +1,4 @@
 [submodule "packages/components"]
 	path = packages/components
-	url = git@git.xiongxiao.me:kevisual/components.git
+	# url = git@git.xiongxiao.me:kevisual/components.git
+  url = https://git.xiongxiao.me/kevisual/components.git

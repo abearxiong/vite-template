@@ -5,11 +5,15 @@ import pkgs from './package.json';
 import tailwindcss from '@tailwindcss/vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 import dotenv from 'dotenv';
+dotenv.config({ path: '.env.development' });
 const version = pkgs.version || '0.0.1';
 const isDev = process.env.NODE_ENV === 'development';
 const basename = isDev ? '/' : pkgs?.basename || '/';
-const plugins = [react(), tailwindcss(), basicSsl()];
-dotenv.config({ path: '.env.development' });
+const plugins = [react(), tailwindcss()];
+const isCNB = process.env.CNB === 'true';
+if (isDev && !isCNB) {
+  plugins.push(basicSsl());
+}
 let target = process.env.VITE_API_URL || 'http://localhost:3000';
 let proxy = {
   '/root/center/': {
@@ -59,6 +63,7 @@ export default defineConfig(() => {
     server: {
       port: 7008,
       host: '0.0.0.0',
+      allowedHosts: true,
       proxy,
     },
   };

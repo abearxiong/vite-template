@@ -3,12 +3,11 @@ $:
   vscode:
     - docker:
         image: docker.cnb.cool/kevisual/dev-env:latest
-      env:
-        CNB_WELCOME_EXECUTE_COMMAND: echo "Welcome to CNB!"
       services:
         - vscode
         - docker
+      imports: https://cnb.cool/kevisual/env/-/blob/main/env.yml
       # 开发环境启动后会执行的任务
       stages:
-        - name: ls
-          script: ls -al
+        - name: pnpm install
+          script: pnpm install

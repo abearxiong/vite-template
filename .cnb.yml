@@ -1,0 +1,14 @@
+# .cnb.yml
+$:
+  vscode:
+    - docker:
+        image: docker.cnb.cool/kevisual/dev-env:latest
+      env:
+        CNB_WELCOME_EXECUTE_COMMAND: echo "Welcome to CNB!"
+      services:
+        - vscode
+        - docker
+      # 开发环境启动后会执行的任务
+      stages:
+        - name: ls
+          script: ls -al

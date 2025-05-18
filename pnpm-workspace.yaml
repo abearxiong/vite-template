@@ -1,3 +1,5 @@
 packages:
-  - 'submodules/*'
-  - 'packages/*'
+  - submodules/*
+  - packages/*
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'

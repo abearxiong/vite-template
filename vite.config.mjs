@@ -14,24 +14,17 @@ const isCNB = process.env.CNB === 'true';
 if (isDev && !isCNB) {
   plugins.push(basicSsl());
 }
-let target = process.env.VITE_API_URL || 'http://localhost:3000';
+let target = process.env.VITE_API_URL || 'http://localhost:51015';
+const apiProxy = { target: target, changeOrigin: true, ws: true, rewriteWsOrigin: true, secure: false, cookieDomainRewrite: 'localhost' };
 let proxy = {
   '/root/center/': {
     target: `${target}/root/center/`,
   },
-  '/root/system-lib/': {
-    target: `${target}/root/system-lib/`,
-  },
   '/user/login/': {
     target: `${target}/user/login/`,
   },
-  '/api': {
-    target: target,
-    changeOrigin: true,
-    ws: true,
-    rewriteWsOrigin: true,
-    cookieDomainRewrite: 'localhost',
-  },
+  '/api': apiProxy,
+  '/client': apiProxy,
 };
 /**
  * @see https://vitejs.dev/config/

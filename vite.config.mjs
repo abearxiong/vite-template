@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import pkgs from './package.json';
 import tailwindcss from '@tailwindcss/vite';
-import basicSsl from '@vitejs/plugin-basic-ssl';
+import basicSsl from '@kevisual/ssl';
 import dotenv from 'dotenv';
 dotenv.config({ path: '.env.development' });
 const version = pkgs.version || '0.0.1';

@@ -30,3 +30,8 @@ tsconfig.node.tsbuildinfo
 .turbo
 
 .pnpm-store
+
+.tanstack
+.env 
+
+!.env.example

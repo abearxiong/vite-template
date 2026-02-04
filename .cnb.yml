@@ -1,4 +1,14 @@
 # .cnb.yml
+include:
+  - https://cnb.cool/kevisual/cnb/-/blob/main/.cnb/template.yml
+
+.common_env: &common_env
+  env:
+    TO_REPO: template/vite-react-template
+    TO_URL: git.xiongxiao.me
+  imports:
+    - https://cnb.cool/kevisual/env/-/blob/main/.env.development
+
 $:
   vscode:
     - docker:
@@ -6,8 +16,29 @@ $:
       services:
         - vscode
         - docker
-      imports: https://cnb.cool/kevisual/env/-/blob/main/env.yml
+      imports: !reference  [.common_env, imports]
       # 开发环境启动后会执行的任务
-      stages:
-        - name: pnpm install
-          script: pnpm install
+      # stages:
+      #   - name: pnpm install
+      #     script: pnpm install
+      stages: !reference  [.dev_template, stages]
+
+.common_sync_to_gitea: &common_sync_to_gitea
+  - <<: *common_env
+    services: !reference  [.common_sync_to_gitea_template, services]
+    stages: !reference [.common_sync_to_gitea_template, stages]
+
+.common_sync_from_gitea: &common_sync_from_gitea
+  - <<: *common_env
+    services: !reference  [.common_sync_from_gitea_template, services]
+    stages: !reference [.common_sync_from_gitea_template, stages]
+
+main:
+  web_trigger_sync_to_gitea: 
+    - <<: *common_sync_to_gitea
+  web_trigger_sync_from_gitea:
+    - <<: *common_sync_from_gitea
+  api_trigger_sync_to_gitea:
+    - <<: *common_sync_to_gitea
+  api_trigger_sync_from_gitea:
+    - <<: *common_sync_from_gitea

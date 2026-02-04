@@ -7,13 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:css": "tailwindcss -i ./src/index.css -o ./dist/render.css --minify",
-    "postbuild2": "pnpm build:css",
     "preview": "vite preview",
-    "pub": "envision deploy ./dist -k vite-react -v 0.0.1",
-    "dev:lib": "turbo dev",
-    "git:submodule": "git submodule update --init --recursive",
-    "cmd": "tsx ./script/index.ts "
+    "ui": "pnpm dlx shadcn@latest add ",
+    "pub": "envision deploy ./dist -k vite-react -v 0.0.1"
   },
   "files": [
     "dist"
@@ -21,42 +17,37 @@
   "author": "abearxiong <xiongxiao@xiongxiao.me>",
   "license": "MIT",
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@kevisual/router": "0.0.22",
-    "@mui/material": "^7.1.1",
+    "@kevisual/router": "0.0.70",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@tanstack/react-router": "^1.158.0",
     "clsx": "^2.1.1",
-    "dayjs": "^1.11.13",
-    "lodash-es": "^4.17.21",
-    "lucide-react": "^0.513.0",
-    "nanoid": "^5.1.5",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-hook-form": "^7.57.0",
-    "react-router": "^7.6.2",
-    "react-router-dom": "^7.6.2",
-    "react-toastify": "^11.0.5",
-    "zustand": "^5.0.5"
+    "dayjs": "^1.11.19",
+    "es-toolkit": "^1.44.0",
+    "lucide-react": "^0.563.0",
+    "nanoid": "^5.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-hook-form": "^7.71.1",
+    "zustand": "^5.0.11"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "@kevisual/components": "workspace:*",
-    "@kevisual/query": "0.0.28",
-    "@kevisual/ssl": "^0.0.1",
-    "@kevisual/types": "^0.0.10",
-    "@tailwindcss/vite": "^4.1.8",
-    "@types/node": "^22.15.30",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.5.1",
-    "commander": "^14.0.0",
-    "dotenv": "^16.5.0",
-    "inquire": "^0.4.8",
-    "tailwindcss": "^4.1.8",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "@kevisual/query": "0.0.39",
+    "@kevisual/types": "^0.0.12",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-router-devtools": "^1.158.0",
+    "@tanstack/router-plugin": "^1.158.0",
+    "@types/node": "^25.2.0",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.3",
+    "dotenv": "^17.2.3",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
   },
-  "packageManager": "pnpm@10.11.1"
+  "packageManager": "pnpm@10.28.2"
 }

@@ -2,6 +2,7 @@
   "extends": "@kevisual/types/json/frontend.json",
   "compilerOptions": {
     "baseUrl": "./",
+    "jsx": "react-jsx",
     "paths": {
       "@/*": [
         "src/*"

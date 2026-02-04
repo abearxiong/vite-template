@@ -2,10 +2,12 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 import './index.css'
+import { basename } from './modules/basename'
 
 // Set up a Router instance
 const router = createRouter({
   routeTree,
+  basepath: basename,
   defaultPreload: 'intent',
   scrollRestoration: true,
 })

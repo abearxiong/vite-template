@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "ui": "pnpm dlx shadcn@latest add ",
-    "pub": "envision deploy ./dist -k vite-react -v 0.0.1"
+    "pub": "envision deploy ./dist -k vite-react -v 0.0.1 -y y -u"
   },
   "files": [
     "dist"
@@ -20,6 +20,7 @@
     "@kevisual/router": "0.0.70",
     "@radix-ui/react-slot": "^1.2.4",
     "@tanstack/react-router": "^1.158.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.19",
     "es-toolkit": "^1.44.0",

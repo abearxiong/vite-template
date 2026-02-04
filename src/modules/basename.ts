@@ -1,2 +1,2 @@
 // @ts-ignore
-export const basename = DEV_SERVER ? '/' : BASE_NAME;
+export const basename = BASE_NAME;

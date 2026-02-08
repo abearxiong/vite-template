@@ -17,10 +17,6 @@ $:
         - vscode
         - docker
       imports: !reference  [.common_env, imports]
-      # 开发环境启动后会执行的任务
-      # stages:
-      #   - name: pnpm install
-      #     script: pnpm install
       stages: !reference  [.dev_template, stages]
 
 .common_sync_to_gitea: &common_sync_to_gitea
@@ -34,10 +30,6 @@ $:
     stages: !reference [.common_sync_from_gitea_template, stages]
 
 main:
-  web_trigger_sync_to_gitea: 
-    - <<: *common_sync_to_gitea
-  web_trigger_sync_from_gitea:
-    - <<: *common_sync_from_gitea
   api_trigger_sync_to_gitea:
     - <<: *common_sync_to_gitea
   api_trigger_sync_from_gitea:

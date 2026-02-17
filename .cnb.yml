@@ -4,8 +4,7 @@ include:
 
 .common_env: &common_env
   env:
-    TO_REPO: template/vite-react-template
-    TO_URL: git.xiongxiao.me
+    USERNAME: root
   imports:
     - https://cnb.cool/kevisual/env/-/blob/main/.env.development
 
@@ -18,19 +17,3 @@ $:
         - docker
       imports: !reference  [.common_env, imports]
       stages: !reference  [.dev_template, stages]
-
-.common_sync_to_gitea: &common_sync_to_gitea
-  - <<: *common_env
-    services: !reference  [.common_sync_to_gitea_template, services]
-    stages: !reference [.common_sync_to_gitea_template, stages]
-
-.common_sync_from_gitea: &common_sync_from_gitea
-  - <<: *common_env
-    services: !reference  [.common_sync_from_gitea_template, services]
-    stages: !reference [.common_sync_from_gitea_template, stages]
-
-main:
-  api_trigger_sync_to_gitea:
-    - <<: *common_sync_to_gitea
-  api_trigger_sync_from_gitea:
-    - <<: *common_sync_from_gitea

@@ -1,5 +1,5 @@
 import { Query } from '@kevisual/query';
-import { QueryLoginBrowser } from '@kevisual/api/login'
+import { QueryLoginBrowser } from '@kevisual/api/query-login'
 export const query = new Query({
   url: '/api/router',
 });

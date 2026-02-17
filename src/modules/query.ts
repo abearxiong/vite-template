@@ -1,9 +1,13 @@
-import { QueryClient } from '@kevisual/query';
-
-export const query = new QueryClient({
+import { Query } from '@kevisual/query';
+import { QueryLoginBrowser } from '@kevisual/api/login'
+export const query = new Query({
   url: '/api/router',
 });
 
-export const queryClient = new QueryClient({
+export const queryClient = new Query({
   url: '/client/router',
+});
+
+export const queryLogin = new QueryLoginBrowser({
+  query: query
 });

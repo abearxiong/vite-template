@@ -46,3 +46,10 @@ pages/page-app/
 - **sonner**: Toast 通知
 - **zustand**: 状态管理
 - **tailwindcss v4**: 使用 @tailwindcss/vite 插件进行样式处理
+
+## 主题系统
+
+- **主题配色**: 采用黑白配色方案，提供简洁优雅的视觉体验
+- **主题模式**: 支持 light（浅色）和 dark（深色）模式切换
+- **主题实现**: 使用 `next-themes` 进行主题管理
+- **CSS 变量**: 主题相关的 CSS 变量定义在 `src/styles/theme.css` 中

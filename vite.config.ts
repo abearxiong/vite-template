@@ -4,6 +4,7 @@ import path from 'path';
 import pkgs from './package.json';
 import tailwindcss from '@tailwindcss/vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite'
+import 'dotenv/config';
 
 const isDev = process.env.NODE_ENV === 'development';
 const basename = isDev ? '/' : pkgs?.basename || '/';
